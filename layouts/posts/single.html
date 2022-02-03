@@ -12,12 +12,12 @@
         {{ .Title }}
       </h1>
       <div class="meta">
-        {{ if (or (isset .Site "author") (isset .Site "title"))}}
+        {{ if (or (not (eq (.Site.Author | default "") "")) (not (eq (.Site.Title | default "") "")))}}
         <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <span itemprop="name">
-            {{ if isset .Site "author" }}
-              {{ .Site.Author }}
-            {{ else if isset .Site "title" }}
+            {{ if not ( eq (.Site.Author | default "") "") }}
+              {{ .Site.Author.name }}
+            {{ else }}
               {{ .Site.Title }}
             {{ end }}
           </span>
