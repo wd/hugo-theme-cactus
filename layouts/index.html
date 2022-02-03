@@ -3,6 +3,7 @@
   {{ if isset .Site.Params "description" }}
     {{ .Site.Params.description | $.Page.RenderString }}
   {{ end }}
+  {{ partial "optional-about.html" . }}
   {{ if isset .Site.Params "social" }}
       <p>Find me on
       {{ $length := (len .Site.Params.social) }}
@@ -34,7 +35,6 @@
       {{ end }}
       </p>
   {{ end }}
-  {{ partial "optional-about.html" . }}
   </section>
 
   <section id="writing">

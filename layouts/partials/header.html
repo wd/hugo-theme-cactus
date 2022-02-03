@@ -8,7 +8,8 @@
     <div id="logo" style="background-image: url({{ "images/logo.png" | absURL }})"></div>
   {{ end}}
   <div id="title">
-    <h1>{{ .Site.Title }}</h1>
+      <h1>{{ .Site.Title }}</h1>
+      <span style="padding-left: 50px;">{{ .Site.Params.subtitle }}</span>
   </div>
   </a>
   <div id="nav">
